@@ -726,6 +726,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gsap/react@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@gsap/react@npm:2.1.1"
+  dependencies:
+    gsap: ^3.12.5
+    react: ">=16"
+  checksum: a242e6b4b17878c73d57c4021641a56aeeca04d2ada17164a4654edc9f03ac2c1ab6156a44b5dc53af37148a0bdb74ca9c636dd4d590705bcd5d1fe96fc345b1
+  languageName: node
+  linkType: hard
+
 "@heroicons/react@npm:~2.1.5":
   version: 2.1.5
   resolution: "@heroicons/react@npm:2.1.5"
@@ -1726,6 +1736,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@se-2/nextjs@workspace:packages/nextjs"
   dependencies:
+    "@gsap/react": ^2.1.1
     "@heroicons/react": ~2.1.5
     "@rainbow-me/rainbowkit": 2.1.6
     "@tanstack/react-query": ~5.28.6
@@ -6168,6 +6179,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gsap@npm:^3.12.5":
+  version: 3.12.5
+  resolution: "gsap@npm:3.12.5"
+  checksum: 60b99dc4482992ba86013963ee9a97a5ec62d480495dd85764788913245aa08cfd202c1df4bbc7592e43d5faa885127bec75f77266f2964fe3d3b559ab63f852
+  languageName: node
+  linkType: hard
+
 "h3@npm:^1.12.0":
   version: 1.13.0
   resolution: "h3@npm:1.13.0"
@@ -9047,7 +9065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:~18.3.1":
+"react@npm:>=16, react@npm:~18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:
