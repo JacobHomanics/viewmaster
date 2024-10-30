@@ -4,19 +4,36 @@
 import { useState } from "react";
 import Image from "next/image";
 // import viewmasterColor from "../public/viewmaster-detailed.svg";
-import viewmasterPlain from "../public/viewmaster-plain.svg";
+// import viewmasterPlain from "../public/viewmaster-plain.svg";
+import viewmasterEdited from "../public/viewmaster-edited.svg";
 // import { useGSAP } from "@gsap/react";
 // import gsap from "gsap";
 import type { NextPage } from "next";
+import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 // let target = 0;
 // let current = 0;
 // const ease = 0.01;
 
-const images = ["/landscape.jpg", "/landscape-2.png", "/landscape-3.png", "/landscape-4.jpg"];
+const entries = [
+  { image: "/slides/1.png", text: "SLOWBALL ERROR. MOLOCH TAKEOVER. DEKAN SAVES THE DAY." },
+  { image: "/slides/2.png", text: "Mind Exploit got rugged" },
+  { image: "/slides/3.png", text: "Our boi Hammy G" },
+  { image: "/slides/4.png", text: "Wise words from an indecent man." },
+];
+
+// const images = ["/landscape.jpg", "/landscape-2.png", "/landscape-3.png", "/landscape-4.jpg"];
 
 const Home: NextPage = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const { data: entryCount } = useScaffoldReadContract({
+    contractName: "Entries",
+    functionName: "getUpvoteCount",
+    args: [BigInt(selectedImageIndex)],
+  });
+
+  const { writeContractAsync } = useScaffoldWriteContract("Entries");
 
   // const [target, setTarget] = useState(0);
 
@@ -113,54 +130,57 @@ const Home: NextPage = () => {
         <Image src={viewmasterColor} alt="Viewmaster Color" width={500} height={720} className="absolute" />
       </div> */}
 
-      <div className="relative flex items-center justify-center gap-5">
-        <div className="flex justify-center items-center mt-[200px]">
-          <div className="w-[900px] h-64 md:h-96 relative">
-            <Image
-              src={images[selectedImageIndex]}
-              alt="Stretch Image"
-              className="w-full h-full object-cover"
-              width={1080}
-              height={720}
-            />
-          </div>
-          {/* <div className="w-[300px] md:w-[900px] h-[100px] md:h-[550px]"> */}
-          {/* <img src="/landscape.jpg" alt="Slide 1" className="w-full h-full" /> */}
-          {/* <Image src={images[selectedImageIndex]} alt="Slide" width={1080} height={720} /> */}
-          {/* </div> */}
+      <div className="flex flex-col">
+        <div className="relative flex items-center justify-center gap-5">
+          <div className="flex justify-center items-center mt-[150px]">
+            <div className="w-[600px] h-[225px] relative">
+              <Image
+                src={entries[selectedImageIndex].image}
+                alt="Stretch Image"
+                className="w-full h-full rounded-full"
+                width={1080}
+                height={720}
+              />
+            </div>
+            {/* <div className="w-[300px] md:w-[900px] h-[100px] md:h-[550px]"> */}
+            {/* <img src="/landscape.jpg" alt="Slide 1" className="w-full h-full" /> */}
+            {/* <Image src={images[selectedImageIndex]} alt="Slide" width={1080} height={720} /> */}
+            {/* </div> */}
 
-          <div className="flex items-center justify-center gap-5 absolute">
-            <button
-              className="btn btn-primary btn-lg"
-              onClick={() => {
-                if (selectedImageIndex - 1 < 0) {
-                  setSelectedImageIndex(images.length - 1);
-                } else {
-                  setSelectedImageIndex(selectedImageIndex - 1);
-                }
-              }}
-            >
-              {"<"}
-            </button>
-            <Image src={viewmasterPlain} alt="Viewmaster Plain" width={1080} height={720} />
-            <button
-              className="btn btn-primary btn-lg"
-              onClick={() => {
-                if (selectedImageIndex + 1 >= images.length) {
-                  setSelectedImageIndex(0);
-                } else {
-                  setSelectedImageIndex(selectedImageIndex + 1);
-                }
-              }}
-            >
-              {">"}
-            </button>
+            <div className="absolute mt-[325px] z-10 flex gap-10">
+              <button
+                className="btn btn-primary btn-lg"
+                onClick={() => {
+                  if (selectedImageIndex - 1 < 0) {
+                    setSelectedImageIndex(entries.length - 1);
+                  } else {
+                    setSelectedImageIndex(selectedImageIndex - 1);
+                  }
+                }}
+              >
+                {"<"}
+              </button>
+              <button
+                className="btn btn-primary btn-lg"
+                onClick={() => {
+                  if (selectedImageIndex + 1 >= entries.length) {
+                    setSelectedImageIndex(0);
+                  } else {
+                    setSelectedImageIndex(selectedImageIndex + 1);
+                  }
+                }}
+              >
+                {">"}
+              </button>
+            </div>
+            <div className="flex items-center justify-center gap-5 absolute">
+              <Image src={viewmasterEdited} alt="Viewmaster Plain" width={720} height={720} />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* </div> */}
-      {/* 
+        {/* </div> */}
+        {/* 
       <div
         className="flex justify-center items-center gap-5 p-5 bg-rose-700 rounded-lg"
         style={{
@@ -171,7 +191,20 @@ const Home: NextPage = () => {
       >
         <Image src="/left-eye.png" alt="Left Eye Image" width={256} height={256} className="rounded-lg shadow-lg" />
         <Image src="/right-eye.png" alt="Right Eye Image" width={256} height={256} className="rounded-lg shadow-lg" /> */}
-      {/* </div> */}
+        {/* </div> */}
+        <div className="mt-32 flex flex-col items-center justify-center">
+          <button
+            className="flex flex-wrap btn btn-primary btn-lg items-center justify-center"
+            onClick={async () => {
+              await writeContractAsync({ functionName: "upvote", args: [BigInt(selectedImageIndex)] });
+            }}
+          >
+            <Image src="/upvote.svg" alt="Upvote" width={50} height={50} />
+            <p className="text-center">{entryCount?.toString()}</p>
+          </button>
+          <p className="text-center">{entries[selectedImageIndex].text}</p>
+        </div>
+      </div>
     </>
   );
 };
