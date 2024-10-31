@@ -145,7 +145,7 @@ const Home: NextPage = () => {
               <Image
                 src={entries[selectedImageIndex].image}
                 alt="Stretch Image"
-                className="w-full h-full rounded-full"
+                className="w-full h-full rounded-[100px]"
                 width={1080}
                 height={720}
               />

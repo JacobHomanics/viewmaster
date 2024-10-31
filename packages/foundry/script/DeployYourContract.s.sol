@@ -13,6 +13,7 @@ contract DeployYourContract is ScaffoldETHDeploy {
     function run() external ScaffoldEthDeployerRunner {
         erc20 mockERC20 = new erc20();
         Entries entries = new Entries(
+            0xc0f0E1512D6A0A77ff7b9C172405D1B0d73565Bf,
             0x11dC980faf34A1D082Ae8A6a883db3A950a3c6E8,
             12
         );
