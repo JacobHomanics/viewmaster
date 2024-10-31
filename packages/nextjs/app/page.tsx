@@ -16,10 +16,18 @@ import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaf
 // const ease = 0.01;
 
 const entries = [
-  { image: "/slides/1.png", text: "SLOWBALL ERROR. MOLOCH TAKEOVER. DEKAN SAVES THE DAY." },
-  { image: "/slides/2.png", text: "Mind Exploit got rugged" },
-  { image: "/slides/3.png", text: "Our boi Hammy G" },
-  { image: "/slides/4.png", text: "Wise words from an indecent man." },
+  { image: "/slides/slide-1.png", text: "It will have to be the one to end all…" },
+  { image: "/slides/slide-2.png", text: "[caption tbd]" },
+  { image: "/slides/slide-3.png", text: "[caption tbd]" },
+  { image: "/slides/slide-4.png", text: "[caption tbd]" },
+  { image: "/slides/slide-5.png", text: "A lonely hamster and their lone dono" },
+  { image: "/slides/slide-6.png", text: "[caption tbd]" },
+  { image: "/slides/slide-7.png", text: "SLOWBALL ERROR. MOLOCH TAKEOVER. DEKAN SAVES THE DAY." },
+  { image: "/slides/slide-8.png", text: "Our boi Hammy G" },
+  { image: "/slides/slide-9.png", text: "Varsha annihilating the lore" },
+  { image: "/slides/slide-10.png", text: "Hamster Barz" },
+  { image: "/slides/slide-11.png", text: "Mindxploit getting rugged" },
+  { image: "/slides/slide-12.png", text: "(((Meta, meta, meta)))" },
 ];
 
 // const images = ["/landscape.jpg", "/landscape-2.png", "/landscape-3.png", "/landscape-4.jpg"];
@@ -132,8 +140,8 @@ const Home: NextPage = () => {
 
       <div className="flex flex-col">
         <div className="relative flex items-center justify-center gap-5">
-          <div className="flex justify-center items-center mt-[150px]">
-            <div className="w-[600px] h-[225px] relative">
+          <div className="flex justify-center items-center mt-[175px]">
+            <div className="w-[875px] h-[350px] relative">
               <Image
                 src={entries[selectedImageIndex].image}
                 alt="Stretch Image"
@@ -147,7 +155,7 @@ const Home: NextPage = () => {
             {/* <Image src={images[selectedImageIndex]} alt="Slide" width={1080} height={720} /> */}
             {/* </div> */}
 
-            <div className="absolute mt-[325px] z-10 flex gap-10">
+            <div className="absolute mt-[500px] z-10 flex gap-10">
               <button
                 className="btn btn-primary btn-lg"
                 onClick={() => {
@@ -174,7 +182,7 @@ const Home: NextPage = () => {
               </button>
             </div>
             <div className="flex items-center justify-center gap-5 absolute">
-              <Image src={viewmasterEdited} alt="Viewmaster Plain" width={720} height={720} />
+              <Image src={viewmasterEdited} alt="Viewmaster Plain" width={1080} height={1080} />
             </div>
           </div>
         </div>
@@ -192,7 +200,7 @@ const Home: NextPage = () => {
         <Image src="/left-eye.png" alt="Left Eye Image" width={256} height={256} className="rounded-lg shadow-lg" />
         <Image src="/right-eye.png" alt="Right Eye Image" width={256} height={256} className="rounded-lg shadow-lg" /> */}
         {/* </div> */}
-        <div className="mt-32 flex flex-col items-center justify-center">
+        <div className="mt-44 flex flex-col items-center justify-center">
           <button
             className="flex flex-wrap btn btn-primary btn-lg items-center justify-center"
             onClick={async () => {
@@ -202,7 +210,7 @@ const Home: NextPage = () => {
             <Image src="/upvote.svg" alt="Upvote" width={50} height={50} />
             <p className="text-center">{entryCount?.toString()}</p>
           </button>
-          <p className="text-center">{entries[selectedImageIndex].text}</p>
+          <p className="text-center text-2xl">{entries[selectedImageIndex].text}</p>
         </div>
       </div>
     </>
