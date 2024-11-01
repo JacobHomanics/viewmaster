@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   8453: {
     erc20: {
-      address: "0x560dc87113133b6729bdbfb8b5e5b2b799ddedfc",
+      address: "0x76bf1f0fbbdd12cf134966596c1778edd848a8c8",
       abi: [
         {
           type: "constructor",
@@ -355,11 +355,16 @@ const deployedContracts = {
       },
     },
     Entries: {
-      address: "0x3ff1e4c1d49d6a1903a82c8f6f7689897b9d80a8",
+      address: "0x7aac33e6d3c6f4ac373890d23c56ee7778a34cf0",
       abi: [
         {
           type: "constructor",
           inputs: [
+            {
+              name: "owner",
+              type: "address",
+              internalType: "address",
+            },
             {
               name: "tokenAddress",
               type: "address",
@@ -406,6 +411,13 @@ const deployedContracts = {
           stateMutability: "nonpayable",
         },
         {
+          type: "function",
+          name: "withdraw",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
           type: "error",
           name: "AlreadyVoted",
           inputs: [],
@@ -413,6 +425,11 @@ const deployedContracts = {
         {
           type: "error",
           name: "NotEnoughTokens",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "NotOwner",
           inputs: [],
         },
       ],
@@ -775,6 +792,11 @@ const deployedContracts = {
           type: "constructor",
           inputs: [
             {
+              name: "owner",
+              type: "address",
+              internalType: "address",
+            },
+            {
               name: "tokenAddress",
               type: "address",
               internalType: "address",
@@ -820,6 +842,13 @@ const deployedContracts = {
           stateMutability: "nonpayable",
         },
         {
+          type: "function",
+          name: "withdraw",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
           type: "error",
           name: "AlreadyVoted",
           inputs: [],
@@ -827,6 +856,11 @@ const deployedContracts = {
         {
           type: "error",
           name: "NotEnoughTokens",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "NotOwner",
           inputs: [],
         },
       ],

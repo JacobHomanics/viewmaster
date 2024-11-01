@@ -16,18 +16,19 @@ import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaf
 // const ease = 0.01;
 
 const entries = [
-  { image: "/slides/slide-1.png", text: "It will have to be the one to end all…" },
-  { image: "/slides/slide-2.png", text: "[caption tbd]" },
-  { image: "/slides/slide-3.png", text: "[caption tbd]" },
-  { image: "/slides/slide-4.png", text: "[caption tbd]" },
-  { image: "/slides/slide-5.png", text: "A lonely hamster and their lone dono" },
-  { image: "/slides/slide-6.png", text: "[caption tbd]" },
-  { image: "/slides/slide-7.png", text: "SLOWBALL ERROR. MOLOCH TAKEOVER. DEKAN SAVES THE DAY." },
-  { image: "/slides/slide-8.png", text: "Our boi Hammy G" },
-  { image: "/slides/slide-9.png", text: "Varsha annihilating the lore" },
-  { image: "/slides/slide-10.png", text: "Hamster Barz" },
-  { image: "/slides/slide-11.png", text: "Mindxploit getting rugged" },
-  { image: "/slides/slide-12.png", text: "(((Meta, meta, meta)))" },
+  { image: "/slides-2/0.png", text: "It will have to be the one to end all…" },
+  { image: "/slides-2/1.png", text: "[caption tbd]" },
+  { image: "/slides-2/2.png", text: "Cookie Jar face lift" },
+  { image: "/slides-2/3.png", text: "A lonely hamster and their lone dono" },
+  { image: "/slides-2/4.png", text: "RGCVII’s personal treasury hunt" },
+  { image: "/slides-2/5.png", text: "Cohort motto ”Put a hamster on it”" },
+  { image: "/slides-2/6.png", text: "SLOWBALL ERROR. MOLOCH TAKEOVER. DEKAN SAVES THE DAY." },
+  { image: "/slides-2/7.png", text: "Hamster Barz" },
+  { image: "/slides-2/8.png", text: "Mindxploit getting rugged" },
+  { image: "/slides-2/9.png", text: "Varsha annihilating the lore" },
+  { image: "/slides-2/10.png", text: "Our boi Hammy G" },
+  { image: "/slides-2/11.png", text: "(((Meta, meta, meta)))" },
+  { image: "/slides-2/12.png", text: "Our boi Hammy G (Equipped)" },
 ];
 
 // const images = ["/landscape.jpg", "/landscape-2.png", "/landscape-3.png", "/landscape-4.jpg"];
