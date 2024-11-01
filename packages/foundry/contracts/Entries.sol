@@ -38,13 +38,13 @@ contract Entries {
         s_upvoteCount[id]++;
         s_voted[id][msg.sender] = true;
 
-        if (s_token.balanceOf(msg.sender) >= 3000) {
-            s_token.transferFrom(msg.sender, address(this), 100);
-        }
+        // if (s_token.balanceOf(msg.sender) >= 3000) {
+        //     s_token.transferFrom(msg.sender, address(this), 100);
+        // }
 
-        if (s_token.balanceOf(msg.sender) < 3000) {
-            s_token.transferFrom(address(this), msg.sender, 100);
-        }
+        // if (s_token.balanceOf(msg.sender) < 3000) {
+        //     s_token.transferFrom(address(this), msg.sender, 100);
+        // }
     }
 
     function withdraw() external {
