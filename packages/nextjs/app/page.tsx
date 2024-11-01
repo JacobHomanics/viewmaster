@@ -17,7 +17,7 @@ import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaf
 
 const entries = [
   { image: "/slides-2/0.png", text: "It will have to be the one to end all…" },
-  { image: "/slides-2/1.png", text: "[caption tbd]" },
+  { image: "/slides-2/1.png", text: "Hamsters Gaining Authority Through Hats" },
   { image: "/slides-2/2.png", text: "Cookie Jar face lift" },
   { image: "/slides-2/3.png", text: "A lonely hamster and their lone dono" },
   { image: "/slides-2/4.png", text: "RGCVII’s personal treasury hunt" },
