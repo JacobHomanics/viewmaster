@@ -28,7 +28,7 @@ const entries = [
   { image: "/slides-2/9.png", text: "Varsha annihilating the lore" },
   { image: "/slides-2/10.png", text: "Our boi Hammy G" },
   { image: "/slides-2/11.png", text: "(((Meta, meta, meta)))" },
-  { image: "/slides-2/12.png", text: "Our boi Hammy G (Equipped)" },
+  { image: "/slides-2/12.png", text: "Varsha annihilating the lore v2" },
 ];
 
 // const images = ["/landscape.jpg", "/landscape-2.png", "/landscape-3.png", "/landscape-4.jpg"];
